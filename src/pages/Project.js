@@ -2,11 +2,14 @@ import React from 'react'
 import { ResetPage } from '../components/ResetPage'
 import Header from '../components/Header'
 import Slideshow from '../components/Slideshow'
+import useIntersectionObserver from '../components/Animations'
+
 
 const Project = ({images, name, description, isMobile }) => {
+    const firstGroupRef = useIntersectionObserver('.first-group');
 
     const handleArrowClick = () => {
-        smoothScrollTo(0, window.innerHeight * 1, 800); // Scroll to 20% of the viewport height in 0.8 seconds
+        smoothScrollTo(0, window.innerHeight * 1, 800); // Scroll to 100% of the viewport height in 0.8 seconds
       };
       
       const smoothScrollTo = (endX, endY, duration) => {
@@ -38,22 +41,21 @@ const Project = ({images, name, description, isMobile }) => {
     <section className="w-full bg-gray-950 text-gray-300 tracking-wider">
         <ResetPage/>
         <div className='h-[100vh] flex flex-col'>
-            <div className='w-full h-1/2 flex flex-col items-center justify-center bg-gray-300 text-black'>
+            <div className='w-full h-1/2 flex flex-col items-center justify-center bg-gray-300 text-black first-group'>
             {name.split(' ').map((word, index) => (
-                <p key={index} className='text-7xl lg:text-[10rem] lg:h-40'>{word}</p>
+                <p key={index} className='text-6xl lg:text-[10rem] lg:h-40'>{word}</p>
             ))}
             </div>
-            <div className='mx-auto w-3/4 lg:w-1/3 h-1/2 flex flex-col justify-center items-center text-gray-300 text-left'>
+            <div className='mx-auto w-3/4 h-1/2 lg:w-1/3 flex flex-col justify-center items-center text-gray-300 text-left'>
                 <p className='text-sm lg:text-xl'>{description}</p>
                 <div className='flex flex-col items-center absolute bottom-0 -translate-y-10'>
-                    <img className='w-6 lg:w-16 h-6 lg:h-16 cursor-pointer' src='../static/images/down-arrow.png' onClick={handleArrowClick}></img>
+                    <img className='w-6 lg:w-16 h-6 lg:h-16 cursor-pointer' src='../static/images/down-arrow.png' alt='down' onClick={handleArrowClick}></img>
                 </div>
             </div>
         </div>
-        <div className='h-[100vh] mx-auto w-full lg:w-3/4 flex flex-col justify-center items-center text-xl font-bold p-10 space-y-4'>
-            <p className='tracking-wider'>Images</p>
-            <div className='relative border-2 border-gray-300 p-2'>
-                <div className="absolute inset-0 bg-black opacity-10 z-10"></div>
+        <div className='min-h-[100vh] mx-auto w-full md:w-3/4 flex flex-col justify-center items-center text-xl font-bold p-4 lg:p-10 space-y-10'>
+            <p className='tracking-wider'>IMAGES</p>
+            <div className='relative border border-gray-300 p-2'>
                 <Slideshow isMobile={isMobile} images={images} />
             </div>
         </div>

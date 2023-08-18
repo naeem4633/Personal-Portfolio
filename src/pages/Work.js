@@ -16,9 +16,9 @@ const Work = () => {
         </div>
         <div className='flex flex-col h-full w-3/4 lg:w-2/5 justify-evenly text-2xl lg:text-5xl items-start'>
           <ul className='flex flex-col h-full justify-evenly'>
-            <Link to={'/work/cosmetics'} className='hover:text-white hover:translate-x-2 transition-all duration-200'>E-commerce Cosmetics Boutique</Link>
             <Link to={'/work/portfolio'} className='hover:text-white hover:translate-x-2 transition-all duration-200'>Photographer Portfolio</Link>
             <Link to={'/work/euphoria'} className='hover:text-white hover:translate-x-2 transition-all duration-200'>Café Euphoria</Link>
+            <Link to={'/work/cosmetics'} className='hover:text-white hover:translate-x-2 transition-all duration-200'>E-commerce Cosmetics Boutique</Link>
             <Link to={'/work/music-app'} className='hover:text-white hover:translate-x-2 transition-all duration-200'>Spotify Music App</Link>
             <Link to={'/work/furniture'} className='hover:text-white hover:translate-x-2 transition-all duration-200'>Furniture Emporium</Link>
           </ul>

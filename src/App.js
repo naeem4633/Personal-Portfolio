@@ -20,6 +20,28 @@ function App() {
     'cosmetics-3',
     'cosmetics-4',
   ]
+  const portfolioImages = [
+    'portfolio-1',
+    'portfolio-2',
+    'portfolio-3',
+  ]
+  const furnitureImages = [
+    'furniture-1',
+    'furniture-2',
+    'furniture-3',
+    'furniture-4',
+  ]
+  const euphoriaImages = [
+    'euphoria-1',
+    'euphoria-2',
+    'euphoria-3',
+  ]
+  const musicAppImages = [
+    'musicApp-1',
+    'musicApp-2',
+    'musicApp-3',
+  ]
+
   const cosmeticsDescription = "An online cosmetics store, developed using React and Django, featuring user login options, social logins, product listings, as well as cart and wishlist capabilities. The store offers a wide variety of cosmetics products to cater to different preferences and needs.";
   const furnitureDescription = "An online furniture store created with React and Django, designed to offer a hassle-free experience for exploring curated furnishings.";
   const euphoriaDescription = "A virtual showcase capturing the essence of a charming coffee shop. Immerse yourself in the aroma of freshly brewed coffee and the cozy ambiance. Explore a digital journey that brings the warm embrace of Cafe Euphoria to your screen.";
@@ -49,10 +71,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/work/cosmetics" element={<Project images={cosmeticsImages} name={"Cosmetics Boutique"} description={cosmeticsDescription} isMobile={isMobile}/>} />
-          <Route path="/work/furniture" element={<Project images={cosmeticsImages} name={"Furniture Emporium"} description={furnitureDescription} isMobile={isMobile}/>} />
-          <Route path="/work/portfolio" element={<Project images={cosmeticsImages} name={"Photographer Portfolio"} description={portfolioDescription} isMobile={isMobile}/>} />
-          <Route path="/work/euphoria" element={<Project images={cosmeticsImages} name={"Café Euphoria"} description={euphoriaDescription} isMobile={isMobile}/>} />
-          <Route path="/work/music-app" element={<Project images={cosmeticsImages} name={"Music App"} description={musicAppDescription} isMobile={isMobile}/>} />
+          <Route path="/work/furniture" element={<Project images={furnitureImages} name={"Furniture Emporium"} description={furnitureDescription} isMobile={isMobile}/>} />
+          <Route path="/work/portfolio" element={<Project images={portfolioImages} name={"Photographer Portfolio"} description={portfolioDescription} isMobile={isMobile}/>} />
+          <Route path="/work/euphoria" element={<Project images={euphoriaImages} name={"Café Euphoria"} description={euphoriaDescription} isMobile={isMobile}/>} />
+          <Route path="/work/music-app" element={<Project images={musicAppImages} name={"Music App"} description={musicAppDescription} isMobile={isMobile}/>} />
         </Routes>
       </div>
       <Footer />
