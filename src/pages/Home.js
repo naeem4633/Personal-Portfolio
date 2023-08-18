@@ -1,21 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Header from '../components/Header'
 
 const Home = () => {
   return (
+    <>
+    <Header navigation={false} transparent={false}/>
     <section className="w-full h-[100vh] bg-gray-950 flex items-center text-gray-300">
-      <div className='h-3/4 w-full flex flex-row justify-around items-center'>
-        <div className='h-3/4 flex flex-col space-y-4 justify-end tracking-wider font-semibold'>
+      <div className='h-full lg:h-3/4 w-full flex flex-col lg:flex-row justify-around items-center'>
+        <div className='lg:h-3/4 flex flex-col space-y-4 justify-center lg:justify-end tracking-wider font-semibold'>
           <p>SYED NAEEM AHMED</p>
           <p className='font-light'>Full Stack Developer / Web Designer</p>
         </div>
-        <div className='flex flex-col w-2/5'>
-          <Link to={'/work'} className='h-60 font-light text-[12rem] hover:translate-x-4 hover:text-white transition-all duration-200'>WORK</Link>
-          <Link to={'/about'} className='h-60 font-light text-[12rem] hover:translate-x-4 hover:text-white transition-all duration-200'>ABOUT</Link>
-          <Link to={'/contact'} className='h-60 font-light text-[12rem] hover:translate-x-4 hover:text-white transition-all duration-200'>CONTACT</Link>
+        <div className='h-2/3 lg:h-full flex flex-col w-full lg:w-2/5 font-light text-7xl xl:text-[12rem] items-center'>
+          <div className='h-full flex flex-col space-y-10 lg:space-y-0'>
+            <Link to={'/work'} className='lg:h-60 hover:translate-x-4 hover:text-white transition-all duration-200'>WORK</Link>
+            <Link to={'/about'} className='lg:h-60 hover:translate-x-4 hover:text-white transition-all duration-200'>ABOUT</Link>
+            <Link to={'/contact'} className='lg:h-60 hover:translate-x-4 hover:text-white transition-all duration-200'>CONTACT</Link>
+          </div>
         </div>
       </div>
     </section>
+    </>
   )
 }
 
