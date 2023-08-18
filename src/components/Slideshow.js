@@ -6,7 +6,7 @@ const Slideshow = ({ images, isMobile }) => {
 
   const getImageSource = (imageName) => {
     const imageSuffix = isMobile ? '-mobile' : ''; // Add '-mobile' if isMobile is true
-    return `../static/images/${imageName}${imageSuffix}.png`;
+    return `../static/images/${imageName}${imageSuffix}.jpg`;
   }
 
   return (
