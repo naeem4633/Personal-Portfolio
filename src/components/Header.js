@@ -8,7 +8,7 @@ const Header = ({navigation, transparent}) => {
             <Link className='' to={'/'}>
                 <img className='w-20 h-16' src='../static/images/logo.png' alt='logo'></img>
             </Link>
-            {navigation && (<ul className='w-full lg:w-auto justify-end md:mx-4 lg:mx-0 flex flex-row space-x-5 text-sm'>
+            {navigation && (<ul className='w-1/2 lg:w-auto justify-end md:mx-4 lg:mx-0 flex flex-row space-x-5 text-sm'>
                 <Link to={'/'} className='hidden lg:inline-block relative group'>
                     <span className='pb-1 block'>HOME</span>
                     {!transparent && (<span className='absolute bottom-1 left-0 w-full h-0.5 bg-white group-hover:-translate-y-2'></span>)}
