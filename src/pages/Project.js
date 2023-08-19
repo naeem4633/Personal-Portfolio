@@ -9,7 +9,7 @@ const Project = ({images, name, description, isMobile }) => {
     const firstGroupRef = useIntersectionObserver('.first-group');
 
     const handleArrowClick = () => {
-        smoothScrollTo(0, window.innerHeight * 1, 800); // Scroll to 100% of the viewport height in 0.8 seconds
+        smoothScrollTo(0, window.innerHeight * 1, 800); // Scroll to 100% of the viewport height in 1 second
       };
       
       const smoothScrollTo = (endX, endY, duration) => {
@@ -49,13 +49,13 @@ const Project = ({images, name, description, isMobile }) => {
             <div className='mx-auto w-3/4 h-1/2 lg:w-1/3 flex flex-col justify-center items-center text-gray-300 text-left'>
                 <p className='text-sm lg:text-xl'>{description}</p>
                 <div className='flex flex-col items-center absolute bottom-0 -translate-y-10'>
-                    <img className='w-6 lg:w-16 h-6 lg:h-16 cursor-pointer' src='../static/images/down-arrow.png' alt='down' onClick={handleArrowClick}></img>
+                    <img className='w-8 lg:w-16 h-8 lg:h-16 cursor-pointer' src='../static/images/down-arrow.png' alt='down' onClick={handleArrowClick}></img>
                 </div>
             </div>
         </div>
         <div className='min-h-[100vh] mx-auto w-full md:w-3/4 flex flex-col justify-center items-center text-xl font-bold p-4 lg:p-10 space-y-10'>
             <p className='tracking-wider'>IMAGES</p>
-            <div className='relative border border-gray-300 p-2'>
+            <div className='w-full relative p-2'>
                 <Slideshow isMobile={isMobile} images={images} />
             </div>
         </div>

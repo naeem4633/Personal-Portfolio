@@ -1,7 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
+const responsive = {
+  
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+    slidesToSlide: 1
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 768 },
+    items: 1,
+    slidesToSlide: 1
+  },
+  mobile: {
+    breakpoint: { max: 767, min: 100 },
+    items: 1,
+    slidesToSlide: 1
+  }
+};
 const Slideshow = ({ images, isMobile }) => {
 
   const getImageSource = (imageName) => {
@@ -10,12 +28,21 @@ const Slideshow = ({ images, isMobile }) => {
   }
 
   return (
-    <div className="w-full">
-      <Carousel showThumbs={false} showStatus={false} infiniteLoop autoPlay interval={4000}>
+    <div className="parent">
+      <Carousel
+        responsive={responsive}
+        autoPlay={true}
+        swipeable={true}
+        draggable={true}
+        showDots={false}
+        infinite={true}
+        partialVisible={false}
+        // dotListClass="custom-dot-list-style"
+      >
         {images.map((image, index) => (
-          <div key={index}>
+          <div className="w-full border" key={index}>
             <img
-              className="hidden"
+              className="w-full h-full"
               src={getImageSource(image)}
               alt={`Slide ${index + 1}`}
             />
@@ -25,10 +52,6 @@ const Slideshow = ({ images, isMobile }) => {
     </div>
   );
 };
-
 export default Slideshow;
-
-
-
 
 
