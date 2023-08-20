@@ -40,7 +40,7 @@ const Slideshow = ({ images, isMobile }) => {
         // dotListClass="custom-dot-list-style"
       >
         {images.map((image, index) => (
-          <div className="w-full border" key={index}>
+          <div className="w-full" key={index}>
             <img
               className="w-full h-full"
               src={getImageSource(image)}
